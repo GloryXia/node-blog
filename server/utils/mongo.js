@@ -4,6 +4,7 @@ const config = { useNewUrlParser: true }
 const articleCollection = 'myBlogArticles' // 保存文章数据的集合/表
 const database = 'blog' // 数据库名称
 const userCollection = 'user' // 保存用户信息的集合/表
+const articleClass = 'articleClass' // 保存文章分类的表
 let mongodbClient
 let db
 
@@ -39,4 +40,5 @@ module.exports = {
     articleCollection,
     database,
     userCollection,
+    articleClass
 }

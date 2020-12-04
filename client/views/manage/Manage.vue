@@ -5,6 +5,7 @@
                 <p>全部文章（{{ totalArticles }}）</p>
                 <Button class="btn-publish" type="primary" @click="gotoEditor">发布文章</Button>
                 <Button to="/index" style="margin-left: 20px">返回首页</Button>
+                <Button @click="articleClassManage" style="margin-left: 20px">分类管理</Button>
             </div>
             <div class="div-search">
                 <p>筛选：</p>
@@ -64,6 +65,15 @@
                 </div>
             </div>
         </div>
+        <Modal
+            v-model="articleModal"
+            title="Common Modal dialog box title"
+            @on-ok="ok"
+            @on-cancel="cancel">
+            <p>Content of dialog</p>
+            <p>Content of dialog</p>
+            <p>Content of dialog</p>
+        </Modal>
     </div>
 </template>
 
@@ -84,6 +94,7 @@ export default {
             months: ['月份', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
             pageSize: 10,
             pageIndex: 1,
+            articleModal: true
         }
     },
     computed: {
@@ -174,6 +185,17 @@ export default {
             .then(res => {
                 this.$store.commit('setArticles', res)
             })
+        },
+
+        articleClassManage() {
+            console.log('ssssss')
+            this.articleModal = true;
+        },
+        ok() {
+            alert('ok')
+        },
+        cancel() {
+            alert('cancel')
         }
     }
 }

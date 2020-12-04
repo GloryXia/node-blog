@@ -2,23 +2,15 @@ import Vue from 'vue'
 import App from '@/App.vue'
 import '@/assets/iconfont/ionicons.less'
 import '@/styles/public.css'
-import { Button, Tag, Page, Dropdown, DropdownMenu, DropdownItem, Spin, Message, Icon } from 'view-design'
 import VueMarkdown from 'vue-markdown'
 import { createRouter } from '@/router'
 import { createStore } from '@/store'
 import { sync } from 'vuex-router-sync'
+import ViewUI from 'view-design'
+import 'view-design/dist/styles/iview.css'
 
+Vue.use(ViewUI)
 Vue.component('VueMarkdown', VueMarkdown)
-Vue.component('Button', Button)
-Vue.component('Tag', Tag)
-Vue.component('Page', Page)
-Vue.component('Dropdown', Dropdown)
-Vue.component('DropdownMenu', DropdownMenu)
-Vue.component('DropdownItem', DropdownItem)
-Vue.component('Spin', Spin)
-Vue.component('Icon', Icon)
-
-Vue.prototype.$Message = Message
 
 // 解决 [vue-router] failed to resolve async component default: referenceerror: window is not defined 问题
 if (typeof window === 'undefined') {
